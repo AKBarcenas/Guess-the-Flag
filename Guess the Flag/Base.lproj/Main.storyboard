@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,6 +20,9 @@
                         <subviews>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QW7-i4-fsa">
                                 <rect key="frame" x="200" y="230" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="QW7-i4-fsa" secondAttribute="height" multiplier="2:1" id="Ah1-vG-P46"/>
+                                </constraints>
                                 <state key="normal" image="us"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZtG-kS-jKw"/>
@@ -26,6 +30,9 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6JR-6U-UF4">
                                 <rect key="frame" x="200" y="100" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="6JR-6U-UF4" secondAttribute="height" multiplier="2:1" id="QcN-Am-fLV"/>
+                                </constraints>
                                 <state key="normal" image="us"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uEl-hn-vQj"/>
@@ -33,6 +40,9 @@
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVA-rH-OEu">
                                 <rect key="frame" x="200" y="360" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="mVA-rH-OEu" secondAttribute="height" multiplier="2:1" id="cm5-N5-zEa"/>
+                                </constraints>
                                 <state key="normal" image="us"/>
                                 <connections>
                                     <action selector="buttonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fvw-4Y-49g"/>
@@ -41,8 +51,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="QW7-i4-fsa" firstAttribute="height" secondItem="6JR-6U-UF4" secondAttribute="height" id="BRz-Wh-mdg"/>
                             <constraint firstItem="6JR-6U-UF4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MkL-Sl-bdl"/>
                             <constraint firstItem="mVA-rH-OEu" firstAttribute="top" secondItem="QW7-i4-fsa" secondAttribute="bottom" constant="30" id="NdU-kA-y6q"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="mVA-rH-OEu" secondAttribute="bottom" constant="20" id="V8W-8H-PQm"/>
+                            <constraint firstItem="mVA-rH-OEu" firstAttribute="height" secondItem="QW7-i4-fsa" secondAttribute="height" id="aOP-Tk-ikh"/>
                             <constraint firstItem="QW7-i4-fsa" firstAttribute="top" secondItem="6JR-6U-UF4" secondAttribute="bottom" constant="30" id="mLv-2f-X0A"/>
                             <constraint firstItem="mVA-rH-OEu" firstAttribute="centerX" secondItem="QW7-i4-fsa" secondAttribute="centerX" id="omx-tb-jQ9"/>
                             <constraint firstItem="QW7-i4-fsa" firstAttribute="centerX" secondItem="6JR-6U-UF4" secondAttribute="centerX" id="xsS-mL-uGe"/>
