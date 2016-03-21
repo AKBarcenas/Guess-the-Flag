@@ -11,14 +11,26 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    // Buttons displaying flags for the game.
     @IBOutlet weak var button1: UIButton!
     @IBOutlet weak var button2: UIButton!
     @IBOutlet weak var button3: UIButton!
     
+    // The list of countries that are used in the game.
     var countries = [String]()
+    // The correct answer chosen for the current round.
     var correctAnswer = 0
+    // The player's current score.
     var score = 0
 
+    /*
+     * Function Name: viewDidLoad
+     * Parameters: None
+     * Purpose: This method initializes the countries we will use and adds some styling to the buttons.
+     *   Then the player is asked a question.
+     * Return Value: None
+     */
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -35,6 +47,14 @@ class ViewController: UIViewController {
         askQuestion()
     }
     
+    /*
+     * Function Name: askQuestion
+     * Parameters: action - the alert that the user will get
+     * Purpose: This method randomly chooses three countries and asks the user to match one of
+     *   those countries with the correct flag displayed on one of the buttons.
+     * Return Value: None
+     */
+    
     func askQuestion(action: UIAlertAction! = nil) {
         countries = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(countries) as! [String]
         button1.setImage(UIImage(named: countries[0]), forState: .Normal)
@@ -43,6 +63,14 @@ class ViewController: UIViewController {
         correctAnswer = GKRandomSource.sharedRandom().nextIntWithUpperBound(3)
         title = countries[correctAnswer].uppercaseString
     }
+    
+    /*
+     * Function Name: buttonTapped
+     * Parameters: sender - the button that was pressed
+     * Purpose: This method checks if the user got the correct answer and alerts the
+     *   user what their new score is.
+     * Return Value: None
+     */
     
     @IBAction func buttonTapped(sender: UIButton) {
         var title: String
